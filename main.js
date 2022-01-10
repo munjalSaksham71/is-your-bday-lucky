@@ -1,9 +1,9 @@
-var dateOfBirth = document.querySelector("#date-of-birth");
-var luckyNumber = document.querySelector("#lucky-number");
-var submitButton = document.querySelector("#submit");
-var output = document.querySelector("#output");
+const dateOfBirth = document.querySelector("#date-of-birth");
+const luckyNumber = document.querySelector("#lucky-number");
+const submitButton = document.querySelector("#submit");
+const output = document.querySelector("#output");
 
-function calculateSum(dob) {
+const calculateSum = dob => {
   dob = dob.replaceAll("-", "");
   let sum = 0;
   for (let i = 0; i < dob.length; i++) {
@@ -12,7 +12,7 @@ function calculateSum(dob) {
   return sum;
 }
 
-function submitHandler() {
+const submitHandler = () => {
   let dob = dateOfBirth.value;
   let sum = calculateSum(dob);
   if (sum && luckyNumber.value) {
